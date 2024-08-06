@@ -3,6 +3,9 @@ import mysql from 'mysql';
 import cors from 'cors';
 
 const app = express();
+
+
+const port = process.env.PORT || 8800;
 //no envs 
 const db = mysql.createConnection({
     host: 'localhost',
