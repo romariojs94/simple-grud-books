@@ -73,6 +73,6 @@ app.put('/books/:id', (req, res) => {
         return res.json(`Book foi atualizado com sucesso!`);
     });  
 })
-app.listen(8800, () => {
+app.listen(port, () => {
     console.log('Backend server is running!');
 });  
