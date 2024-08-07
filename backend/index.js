@@ -1,18 +1,18 @@
 import express from 'express';
 import mysql from 'mysql';
 import cors from 'cors';
+require('dotenv').config();
 
 const app = express();
 
+const port = process.env.local.PORT || 8800;
 
-const port = process.env.PORT || 8800;
-//no envs 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'library'
-})
+    host: process.env.local.DB_HOST,
+    user: process.env.local.DB_USER,
+    password: process.env.local.DB_PASSWORD,
+    database: process.env.local.DB_DATABASE
+  });
 
 // Permite que o Express entenda requisições com corpo em JSON
 app.use(express.json());
